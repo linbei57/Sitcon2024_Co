@@ -62,10 +62,10 @@ async def process_user_message(message, user_id):
         return "目前沒有相關新聞。"
     elif "故事" in message:
         # 呼叫 generate_gmini_story 函數來生成故事
-        story_response = generate_gmini_story("開始你的故事...", user_id, gmini_api_key)
         if story_response:
             return story_response.get("story", "無法生成故事。")
         return "生成故事時出現錯誤。"
+        story_response = generate_gmini_story("開始你的故事...", user_id, gmini_api_key)
     else:
         return "請問你想了解什麼？可以說「新聞」或「故事」。"
 
